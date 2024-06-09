@@ -1,9 +1,9 @@
 import { Text, View } from "react-native";
 
-export default function NotFoundScreen() {
+export function MyThreads() {
   return (
     <View>
-      <Text>404 Not Found</Text>
+      <Text>My Threads</Text>
     </View>
   );
 }

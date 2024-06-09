@@ -1,9 +1,5 @@
-import { Text, View } from "react-native";
+import { SavedPatterns } from "@/components/pages/savedPatterns";
 
 export default function patterns() {
-  return (
-    <View>
-      <Text>Saved Patterns</Text>
-    </View>
-  );
+  return <SavedPatterns />;
 }

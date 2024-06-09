@@ -1,9 +1,9 @@
 import { Text, View } from "react-native";
 
-export default function NotFoundScreen() {
+export function SavedPatterns() {
   return (
     <View>
-      <Text>404 Not Found</Text>
+      <Text>Saved Patterns</Text>
     </View>
   );
 }

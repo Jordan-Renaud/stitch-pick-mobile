@@ -27,7 +27,7 @@ export function MyThreads() {
       <AddNewThread setThreads={setThreads} threads={threads} />
 
       {hasThreads && (
-        <View style={{ display: "flex", gap: 10 }}>
+        <View style={{ height: "70%" }}>
           <FlatList
             data={threads}
             renderItem={({ item }) => (

@@ -1,9 +1,13 @@
 import { Text, View } from "react-native";
 
+import { PageWrapper } from "../../ui/PageWrapper";
+
 export function ExplorePatterns() {
   return (
-    <View>
-      <Text>Explore Patterns</Text>
-    </View>
+    <PageWrapper>
+      <View>
+        <Text>Explore Patterns</Text>
+      </View>
+    </PageWrapper>
   );
 }

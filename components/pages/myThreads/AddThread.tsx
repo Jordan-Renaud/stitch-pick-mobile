@@ -1,6 +1,7 @@
-import { Button } from "@/components/ui/Button";
 import { useState } from "react";
 import { StyleSheet, TextInput, View } from "react-native";
+
+import { Button } from "../../ui/Button";
 import { Thread } from "./MyThreads";
 
 type AddNewThreadProps = {
@@ -11,9 +12,10 @@ export const AddNewThread = ({ setThreads, threads }: AddNewThreadProps) => {
   const [text, setText] = useState("");
   const generateNewThread = (newThreadText: string) => ({
     id: newThreadText,
-    dmcNumber: "DMC123",
+    dmcNumber: "123",
     name: newThreadText,
     hexCode: "#000000",
+    count: 1,
   });
 
   const handleAddThread = (newThread: string) => {

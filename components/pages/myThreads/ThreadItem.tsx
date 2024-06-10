@@ -1,17 +1,24 @@
-import { Button } from "@/components/ui/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
+
+import { Button } from "../../ui/Button";
 import { Thread } from "./MyThreads";
 
-type ItemProps = { thread: Thread; count?: number };
-export const ThreadItem = ({ thread, count = 0 }: ItemProps) => {
-  const [threadCount, setThreadCount] = useState(count);
+type ItemProps = { thread: Thread; removeThread: (threads: string) => void };
+export const ThreadItem = ({ thread, removeThread }: ItemProps) => {
+  const [threadCount, setThreadCount] = useState(thread.count);
 
+  useEffect(() => {
+    if (threadCount <= 0) {
+      removeThread(thread.id);
+    }
+  });
   return (
-    <View style={styles.wrapper}>
-      <Text>
-        {thread.dmcNumber} – {thread.name}
-      </Text>
+    <View style={{ display: "flex", flexDirection: "row" }}>
+      <View style={styles.dmc}>
+        <Text>DMC {thread.dmcNumber}</Text>
+      </View>
+      <Text>{thread.name}</Text>
       <Text>Count: {threadCount}</Text>
       <View
         style={{ height: 20, width: 20, backgroundColor: thread.hexCode }}
@@ -31,8 +38,14 @@ export const ThreadItem = ({ thread, count = 0 }: ItemProps) => {
 };
 
 const styles = StyleSheet.create({
-  wrapper: {
+  dmc: {
     display: "flex",
-    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    width: 80,
+    height: 30,
+    borderColor: "black",
+    borderBottomWidth: 1,
+    borderTopWidth: 1,
   },
 });

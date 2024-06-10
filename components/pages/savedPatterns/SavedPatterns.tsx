@@ -1,5 +1,6 @@
-import { PageWrapper } from "@/components/ui/PageWrapper";
 import { Text, View } from "react-native";
+
+import { PageWrapper } from "../../ui/PageWrapper";
 
 export function SavedPatterns() {
   return (

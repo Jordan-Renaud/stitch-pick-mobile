@@ -10,8 +10,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    width: "100%",
-    height: "100%",
     top: 20,
   },
 });
